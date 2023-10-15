@@ -5,6 +5,7 @@ import LandingPage from './components/LandingPage';
 
 import CountryCards from './components/CountryCards';
 import Contact from './components/Contact';
+import Info from './components/Info';
 
 
 
@@ -17,6 +18,7 @@ function App() {
       <Navbar />
       <LandingPage />
       <CountryCards />
+      <Info />
       <Contact />
     </React.Fragment>
   );
