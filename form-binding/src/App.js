@@ -1,10 +1,13 @@
 
 import './App.css';
+import ContactForm from './components/ContactForm';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <>
-    <h1>Hello World</h1>
+      <Navbar />
+      <ContactForm />
     </>
   );
 }
