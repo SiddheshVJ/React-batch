@@ -2,9 +2,12 @@ import React from "react";
 import Child from "./Child";
 
 
+// Write in parent and display in child
+// Write in  child and display in parent
 
 
 class Parent extends React.Component {
+
     constructor(props) {
         super(props)
         this.state = {
@@ -19,6 +22,9 @@ class Parent extends React.Component {
             childMsg: data
         })
     }
+
+
+
     render() {
         return (
             <>
