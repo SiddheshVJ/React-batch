@@ -1,6 +1,7 @@
 import React from "react";
 import ComponentTwo from "./ComponentTwo";
 
+import userContext from "./contextAPI/contextApi";
 
 
 class ComponentOne extends React.Component {
@@ -19,9 +20,19 @@ class ComponentOne extends React.Component {
                                 <p className="h3">Component One</p>
                             </div>
                             <div className="card-body ">
-                                <p className="h3">{JSON.stringify(this.state)}</p>
+                                <p className="h3">
+                                    <userContext.Consumer>
+                                        {
+                                            (value) => {
+                                                return (
+                                                    <h1>{JSON.stringify(value)}</h1>
+                                                )
+                                            }
+                                        }
+                                    </userContext.Consumer>
+                                </p>
                             </div>
-                            <ComponentTwo msgTwo={this.state}/>
+                            <ComponentTwo />
                         </div>
                     </div>
                 </div>

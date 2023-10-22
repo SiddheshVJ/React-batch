@@ -1,6 +1,7 @@
 import React from "react";
-import ComponentThree from "./ComponentThree";
 
+import userContext from "./contextAPI/contextApi";
+import ComponentThree from "./ComponentThree";
 class ComponentTwo extends React.Component {
   constructor(props) {
     super(props)
@@ -17,9 +18,19 @@ class ComponentTwo extends React.Component {
                 <p className="h3">Components Two</p>
               </div>
               <div className="card-body ">
-                <p className="h3">{JSON.stringify(this.state)}</p>
+                <p className="h3">
+                  <userContext.Consumer>
+                    {
+                      (value) => {
+                        return (
+                          <h1>{JSON.stringify(value)}</h1>
+                        )
+                      }
+                    }
+                  </userContext.Consumer>
+                </p>
               </div>
-              {/* <ComponentThree msgThree={this.state}/> */}
+              <ComponentThree />
             </div>
           </div>
         </div>

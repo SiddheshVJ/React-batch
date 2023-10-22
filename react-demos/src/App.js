@@ -1,7 +1,6 @@
 import React from "react";
-import ComponentOne from "../src/components/props-drilling/ComponentOne";
 import userContext from "./components/props-drilling/contextAPI/contextApi";
-
+import ComponentOne from "./components/props-drilling/ComponentOne";
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -25,9 +24,9 @@ class App extends React.Component {
               <div className="card-body ">
                 <p className="h3">{JSON.stringify(this.state.userInfo)}</p>
               </div>
-              {/* <ComponentOne msgOne = {this.state.userInfo} /> */}
 
               <userContext.Provider value={this.state.userInfo}>
+                <ComponentOne />
 
               </userContext.Provider>
             </div>
