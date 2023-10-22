@@ -1,6 +1,6 @@
 import React from "react";
-import userContext from "./components/props-drilling/contextAPI/contextApi";
-import ComponentOne from "./components/props-drilling/ComponentOne";
+
+import Watch from "./components/lifeCycle/Watch";
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -15,23 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div className="row text-center">
-          <div className="col-10 m-auto">
-            <div className="card">
-              <div className="card-header bg-danger">
-                <p className="h3">App Component</p>
-              </div>
-              <div className="card-body ">
-                <p className="h3">{JSON.stringify(this.state.userInfo)}</p>
-              </div>
-
-              <userContext.Provider value={this.state.userInfo}>
-                <ComponentOne />
-
-              </userContext.Provider>
-            </div>
-          </div>
-        </div>
+        <Watch />
       </>
     )
   }
