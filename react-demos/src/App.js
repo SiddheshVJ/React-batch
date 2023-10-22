@@ -1,13 +1,14 @@
 import React from "react";
-import Navbar from "./components/axios/Navbar";
-import ContactTable from "./components/axios/ContactTable";
+import Navbar from "./components/Navbar";
+import ContactApp from "./components/ContactApp";
 
 class App extends React.Component {
   render() {
     return (
       <>
         <Navbar />
-        <ContactTable />
+        <ContactApp />
+
       </>
     )
   }
