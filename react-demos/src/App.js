@@ -1,21 +1,13 @@
 import React from "react";
+import Navbar from "./components/axios/Navbar";
+import ContactTable from "./components/axios/ContactTable";
 
-import Watch from "./components/lifeCycle/Watch";
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      userInfo: {
-        name: "Siddhesh",
-        city: "Pune"
-      }
-    }
-  }
-
   render() {
     return (
       <>
-        <Watch />
+        <Navbar />
+        <ContactTable />
       </>
     )
   }
