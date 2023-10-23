@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+
 import ContactApp from "./components/ContactApp";
 
 class App extends React.Component {
@@ -8,7 +9,6 @@ class App extends React.Component {
       <>
         <Navbar />
         <ContactApp />
-
       </>
     )
   }
