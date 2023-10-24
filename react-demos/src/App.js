@@ -1,14 +1,13 @@
 import React from "react";
+import GithubSearchApp from "./components/GithubSearchApp";
 import Navbar from "./components/Navbar";
-
-import ContactApp from "./components/ContactApp";
 
 class App extends React.Component {
   render() {
     return (
       <>
         <Navbar />
-        <ContactApp />
+        <GithubSearchApp />
       </>
     )
   }

@@ -1,24 +1,24 @@
 import React from "react";
 
 
-
 class Navbar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
     }
-    // "https://api.github.com/users/SiddheshVJ"
+// ""
+
+
+
     render() {
         return (
             <>
-                <nav className="navbar navbar-expand-sm bg-dark">
-                    <a href="/" className="navbar-brand text-white"><h3>Github Profile Search</h3> </a>
-                </nav>
+                <div className="navbar bg-warning ">
+                    <a href="/" className="navbar-brand text-dark"><h5>Contact App</h5></a>
+                </div>
             </>
         )
     }
 }
-
-
 
 export default Navbar;
