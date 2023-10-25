@@ -1,0 +1,10 @@
+.landing-page {
+  background: white scroll center;
+  background-size: cover;
+  color: pink;
+}
+
+.wrapper {
+  background-color: rgb(0, 0, 0, 0.5);
+  height: 100%;
+}
