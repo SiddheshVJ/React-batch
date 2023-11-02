@@ -5,6 +5,7 @@ import bcrypt from "bcryptjs";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken"
+import gravatar from "gravatar"
 
 dotenv.config()
 let app = express()
@@ -17,27 +18,32 @@ app.use(bodyParser.json())
 
 // let login data
 
-let user = {
-    id: 'Sid123',
-    name: 'Siddhesh',
-    email: 'sid@gmail.com',
-    password: 'Sidd3102'
-}
+app.get('/jwt', (req, res) => {
 
-let playLoad = {
-    user: {
-        id: user.id,
-        name: user.name
+    let user = {
+        id: 'Sid123',
+        name: 'Siddhesh',
+        email: 'sid@gmail.com',
+        password: 'Sidd3102'
     }
-}
 
-// create token
-let token = jwt.sign(playLoad, secretKey, { expiresIn: 300000000 })
-console.log(token)
+    let playLoad = {
+        user: {
+            id: user.id,
+            name: user.name
+        }
+    }
 
-// decode token at server using this
-let decode = jwt.verify(token, secretKey)
-console.log(decode)
+    // create token
+    let token = jwt.sign(playLoad, secretKey, { expiresIn: 300000000 })
+    console.log(token)
+
+    // decode token at server using this
+    let decode = jwt.verify(token, secretKey)
+    console.log(decode)
+    res.status(200).send("jsonwebtoken")
+})
+
 
 // heartbit
 app.get('/heartbit', (req, res) => {
@@ -51,6 +57,24 @@ app.post('/encryptpass', (req, res) => {
     let hashedPass = bcrypt.hashSync(userPass, salt)
     console.log(hashedPass)
     res.send(hashedPass)
+})
+
+app.get('/gravatar', async (req, res) => {
+    let user = {
+        id: 'Sid123',
+        name: 'Siddhesh',
+        email: 'siddheshvjadhav20@gmail.com',
+        password: 'Sidd3102'
+    }
+    let imgUrl = await gravatar.url(user.email, {
+        s: '200', // size
+        r: 'G', // rating
+        d: 'mm'
+    })
+
+    user.image = imgUrl
+    // console.log(user)
+    res.status(200).send(user)
 })
 
 app.listen(port, (err) => {
