@@ -6,6 +6,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken"
 import gravatar from "gravatar"
+import {v4} from "uuid"
 
 dotenv.config()
 let app = express()
@@ -77,6 +78,36 @@ app.get('/gravatar', async (req, res) => {
     res.status(200).send(user)
 })
 
+app.get('/uuid', (req, res) => {
+    let employees = [
+        {
+            id: v4(),
+            name: 'srushti',
+            email: 'srushti@gmail.com',
+            password: 'Sidd3102'
+        },
+        {
+            id: v4(),
+            name: 'Siddhesh',
+            email: 'siddheshvjadhav20@gmail.com',
+            password: 'Sidd3102'
+        },
+        {
+            id: v4(),
+            name: 'Abhishek',
+            email: 'Abhishek@gmail.com',
+            password: 'Sidd3102'
+        },
+        {
+            id: v4(),
+            name: 'Pritam',
+            email: 'Pritam@gmail.com',
+            password: 'Sidd3102'
+        },
+    ]
+    console.log(employees[1].id)
+    res.status(200)
+})
 app.listen(port, (err) => {
     if (err) {
         console.log(err)
