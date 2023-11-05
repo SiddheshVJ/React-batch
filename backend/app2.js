@@ -18,7 +18,7 @@ let secretKey = process.env.SECRETE
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
-
+app.use('/public', express.static('public')) // css file serving
 // let login data
 
 app.get('/jwt', (req, res) => {
