@@ -1,41 +1,66 @@
 import express from "express";
-
+import user from '../userData'
+import { v4 } from 'uuid'
 const router = express.Router()
 
 router.get('/users', (req, res) => {
     res.status(200).json({
-        msg: "All users info"
+        length: user.length,
+        user
     })
 })
 
 router.get('/user/:id', (req, res) => {
     let userId = req.params.id
-    res.status(200).json({
-        msg: `Get user with ${userId}`
+    let selectedUser = user.find((user) => {
+        return user.id === userId
     })
+    res.status(200).json(selectedUser)
 })
 
-router.post('/user', (req, res) => {
-    let formData = req.body
+router.post('/createuser', (req, res) => {
+    let newUser = {
+        id: v4(),
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        gender: req.body.gender
+    }
+    user.push(newUser)
     res.status(200).json({
-        formData: formData
+        msg: `User created`
     })
 })
 
 router.put('/user/:id', (req, res) => {
     let userId = req.params.id
-    let formData = req.body
+    let updatedUser = {
+        id: userId,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        gender: req.body.gender
+    }
+
+    let requiredIndex = user.map(user => user.id).indexOf(userId)
+
+    // replace  UpdatedUser
+    user.splice(requiredIndex, 1, updatedUser)
     res.status(200).json({
-        msg: `update user ${userId}`,
-        formData: formData
+        msg: `User updated`,
+        user: updatedUser
     })
+
 })
 
 router.delete('/user/:id', (req, res) => {
     let userId = req.params.id
+    let requiredIndex = user.map(user => user.id).indexOf(userId)
+
+    // replace  UpdatedUser
+    user.splice(requiredIndex, 1)
     res.status(200).json({
-        msg: `deleted user ${userId}`,
-        userId : userId
+        msg: `User deleted`,
     })
 })
 
