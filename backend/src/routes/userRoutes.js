@@ -1,5 +1,5 @@
 import express from "express";
-import user from '../userData'
+import user from '../data/userData'
 import { v4 } from 'uuid'
 const router = express.Router()
 
