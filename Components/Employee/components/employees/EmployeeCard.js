@@ -18,6 +18,8 @@ class EmployeeCard extends React.Component {
             .then((response) => {
                 let employees = response.data
                 let empId = this.props.match.params.id
+
+                alert(`${empId} is available`)
                 let selectEmp = employees.find(emp => emp.id === empId)
 
                 this.setState({
