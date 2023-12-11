@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 import 'mdbootstrap/css/bootstrap.min.css'
 import 'mdbootstrap/css/mdb.css'

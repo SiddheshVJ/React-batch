@@ -1,10 +1,11 @@
-.landing-page {
-  background: white scroll center;
+/* .landing-page {
+  background: url("./assets/images/background.jpg") white scroll center;
   background-size: cover;
+  height: 100vh;
   color: pink;
 }
 
 .wrapper {
   background-color: rgb(0, 0, 0, 0.5);
   height: 100%;
-}
+} */
