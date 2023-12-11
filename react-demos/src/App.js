@@ -1,7 +1,10 @@
 import React from "react";
 import './App.css'
-import { BtnExample } from "./BtnExample";
-import { AcceptTerms } from "./AcceptTerms";
+import { MsgOne } from "./useReducerComponents/MsgOne";
+import { MsgTwo } from "./useReducerComponents/MsgTwo";
+import { MsgThree } from "./useReducerComponents/MsgThree";
+// import { BtnExample } from "./BtnExample";
+// import { AcceptTerms } from "./AcceptTerms";
 
 let App = () => {
 
@@ -9,11 +12,12 @@ let App = () => {
     <>
       <nav className="navbar navbar-dark bg-dark navbar-expand-sm ">
         <div className="container">
-          <a href="#" className="navbar-brand">React Hooks useRef() & useReducer()</a>
+          <a href="#" className="navbar-brand">React Hooks useReducer()</a>
         </div>
       </nav>
-      {/* <BtnExample /> */}
-      <AcceptTerms />
+      <MsgOne />
+      <MsgTwo />
+      <MsgThree />
     </>
   )
 }

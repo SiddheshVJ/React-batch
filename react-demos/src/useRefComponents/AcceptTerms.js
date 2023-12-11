@@ -24,7 +24,6 @@ export let AcceptTerms = () => {
                                     <div className="form-check">
                                         <input
                                             onChange={updateCheck}
-
                                             className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
                                         <label htmlFor="defaultCheck1" className="form-check-label">Accept Terms</label>
                                     </div>
