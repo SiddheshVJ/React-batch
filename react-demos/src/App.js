@@ -3,6 +3,8 @@ import './App.css'
 import { MsgOne } from "./useReducerComponents/MsgOne";
 import { MsgTwo } from "./useReducerComponents/MsgTwo";
 import { MsgThree } from "./useReducerComponents/MsgThree";
+import { MsgFour } from "./useReducerComponents/msgFour";
+import { MsgFive } from "./useReducerComponents/msgFive";
 // import { BtnExample } from "./BtnExample";
 // import { AcceptTerms } from "./AcceptTerms";
 
@@ -18,6 +20,8 @@ let App = () => {
       <MsgOne />
       <MsgTwo />
       <MsgThree />
+      <MsgFour />
+      <MsgFive />
     </>
   )
 }

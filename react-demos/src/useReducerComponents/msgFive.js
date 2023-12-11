@@ -1,22 +1,47 @@
 import React, { useState, useReducer } from "react";
 
-export let MsgThree = () => {
+// Action types
+const GOOD_MORNING = "GOOD MORNING"
+const GOOD_AFTERNOON = "GOOD AFTERNOON"
+const GOOD_EVENING = "GOOD EVENING"
+
+// Action function
+
+let sayGoodMorning = () => {
+    return {
+        type: GOOD_MORNING
+    }
+}
+
+let sayGoodAfternoon = () => {
+    return {
+        type: GOOD_AFTERNOON
+    }
+}
+
+let sayGoodEvening = () => {
+    return {
+        type: GOOD_EVENING
+    }
+}
+
+export let MsgFive = () => {
 
     let initialState = {
         message: 'Hello'
     }
 
     let reducer = (state = initialState, action) => {
-        switch (action) {
-            case 'gm':
+        switch (action.type) {
+            case GOOD_MORNING:
                 return {
                     message: 'Good Morning'
                 };
-            case 'ga':
+            case GOOD_AFTERNOON:
                 return {
                     message: 'Good Afternoon'
                 };
-            case 'ge':
+            case GOOD_EVENING:
                 return {
                     message: 'Good Evening'
                 };
@@ -35,13 +60,13 @@ export let MsgThree = () => {
                     <div className="col">
                         <div className="card">
                             <div className="card-header bg-info text-white">
-                                <p className="h3">Functional with useReducer action string </p>
+                                <p className="h3">Functional with useReducer with Redux way </p>
                             </div>
                             <div className="card-body">
                                 <p className="h3">{state.message}</p>
-                                <button onClick={e => dispatch('gm')} className="btn btn-sm btn-success">Good Morning</button>
-                                <button onClick={e => dispatch('ga')} className="btn btn-sm btn-warning">Good Afternoon</button>
-                                <button onClick={e => dispatch('ge')} className="btn btn-sm btn-danger">Good Evening</button>
+                                <button onClick={e => dispatch(sayGoodMorning())} className="btn btn-sm btn-success">Good Morning</button>
+                                <button onClick={e => dispatch(sayGoodAfternoon())} className="btn btn-sm btn-warning">Good Afternoon</button>
+                                <button onClick={e => dispatch(sayGoodEvening())} className="btn btn-sm btn-danger">Good Evening</button>
                             </div>
                         </div>
                     </div>

@@ -1,13 +1,13 @@
 import React, { useState, useReducer } from "react";
 
-export let MsgThree = () => {
+export let MsgFour = () => {
 
     let initialState = {
         message: 'Hello'
     }
 
     let reducer = (state = initialState, action) => {
-        switch (action) {
+        switch (action.type) {
             case 'gm':
                 return {
                     message: 'Good Morning'
@@ -35,13 +35,13 @@ export let MsgThree = () => {
                     <div className="col">
                         <div className="card">
                             <div className="card-header bg-info text-white">
-                                <p className="h3">Functional with useReducer action string </p>
+                                <p className="h3">Functional with useReducer with action object </p>
                             </div>
                             <div className="card-body">
                                 <p className="h3">{state.message}</p>
-                                <button onClick={e => dispatch('gm')} className="btn btn-sm btn-success">Good Morning</button>
-                                <button onClick={e => dispatch('ga')} className="btn btn-sm btn-warning">Good Afternoon</button>
-                                <button onClick={e => dispatch('ge')} className="btn btn-sm btn-danger">Good Evening</button>
+                                <button onClick={e => dispatch({ type: 'gm' })} className="btn btn-sm btn-success">Good Morning</button>
+                                <button onClick={e => dispatch({ type: 'ga' })} className="btn btn-sm btn-warning">Good Afternoon</button>
+                                <button onClick={e => dispatch({ type: 'ge' })} className="btn btn-sm btn-danger">Good Evening</button>
                             </div>
                         </div>
                     </div>
